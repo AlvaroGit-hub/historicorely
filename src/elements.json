@@ -1,0 +1,477 @@
+[{
+    "id": "505900",
+    "model": "contenedor",
+    "timestamp": "2023-02-15_12-04-44",
+    "ok": 1,
+    "id_manufacturer": "None",
+    "results": [
+        ["KO", 1],
+        ["OK", 2]
+    ],
+    "bias": 2,
+    "sequence": [],
+    "views": {
+        "cenital": {
+            "name": "cenital",
+            "rois": ["plastico"],
+            "anomalies": [],
+            "url": "http://localhost:9999/elements/image/63ecbc4f91e4da0a06e2e8fd"
+        },
+        "cenital2": {
+            "name": "cenital2",
+            "rois": ["plastico2"],
+            "anomalies": [],
+            "url": "http://localhost:9999/elements/image/63ecbc4f91e4da0a06e2e8ff"
+        }, 
+        "cenital3": {
+            "name": "cenital3",
+            "rois": [],
+            "anomalies": [],
+            "url": "http://localhost:9999/elements/image/63ecbc4f91e4da0a06e2e901"
+        },
+        "cenital4": {
+            "name": "cenital4",
+            "rois": [],
+            "anomalies": [],
+            "url": "http://localhost:9999/elements/image/63ecbc4f91e4da0a06e2e903"
+        }
+    },
+    "parts": {
+        "uno_plasticos": {
+            "name": "uno_plasticos",
+            "ok": 2,
+            "rois": [
+                "plastico"
+            ]
+        },
+        "dos_plasticos": {
+            "name": "dos_plasticos",
+            "ok": 1,
+            "rois": ["plastico", "plastico2"]
+        }
+    },
+    "rois": {
+        "plastico": {
+            "name": "plastico",
+            "ok": 2,
+            "view_name": "cenital",
+            "results": [
+                ["KO", 1],
+                ["OK", 2]
+            ],
+            "confidence_classification": "None",
+            "confidence_detection": 0.9136490226,
+            "toclassify": false,
+            "detection": {
+                "name": "plastico",
+                "confidence": 0.9136490226,
+                "view": "cenital"
+            },
+            "margin": 0,
+            "defect_type": "unknown",
+            "ignore": false,
+            "threshold": 0.5,
+            "bias": 2
+        },
+        "plastico2": {
+            "name": "plastico",
+            "ok": 1,
+            "view_name": "cenital2",
+            "results": [
+                ["KO", 1],
+                ["OK", 2]
+            ],
+            "confidence_classification": "None",
+            "confidence_detection": "None",
+            "toclassify": false,
+            "detection": "None",
+            "margin": 0,
+            "defect_type": "unknown",
+            "ignore": false,
+            "threshold": 0.5,
+            "bias": 2
+        }
+    },
+    "anomalies": {
+        "plastico_1": {
+            "name": "plastico",
+            "ok": 1,
+            "view_name": "cenital",
+            "results": [
+                ["KO", 1],
+                ["OK", 2]
+            ],
+            "confidence_classification": "None",
+            "confidence_detection": 0.9136490226,
+            "toclassify": false,
+            "detection": {
+                "name": "plastico",
+                "confidence": 0.9136490226,
+                "view": "cenital"
+            },
+            "margin": 0,
+            "defect_type": "unknown",
+            "ignore": false,
+            "threshold": 0.5,
+            "bias": 1
+        }
+    }
+}
+,{
+    "id": "505901",
+    "model": "contenedor",
+    "timestamp": "2023-02-15_12-04-44",
+    "ok": 1,
+    "id_manufacturer": "None",
+    "results": [
+        ["KO", 1],
+        ["OK", 2]
+    ],
+    "bias": 2,
+    "sequence": [],
+    "views": {
+        "cenital": {
+            "name": "cenital",
+            "rois": ["plastico"],
+            "anomalies": [],
+            "url": "http://localhost:9999/elements/image/63ecbc4f91e4da0a06e2e8fd"
+        },
+        "cenital2": {
+            "name": "cenital2",
+            "rois": ["plastico2"],
+            "anomalies": [],
+            "url": "http://localhost:9999/elements/image/63ecbc4f91e4da0a06e2e8ff"
+        }, 
+        "cenital3": {
+            "name": "cenital3",
+            "rois": [],
+            "anomalies": [],
+            "url": "http://localhost:9999/elements/image/63ecbc4f91e4da0a06e2e901"
+        },
+        "cenital4": {
+            "name": "cenital4",
+            "rois": [],
+            "anomalies": [],
+            "url": "http://localhost:9999/elements/image/63ecbc4f91e4da0a06e2e903"
+        }
+    },
+    "parts": {
+        "uno_plasticos": {
+            "name": "uno_plasticos",
+            "ok": 2,
+            "rois": [
+                "plastico"
+            ]
+        },
+        "dos_plasticos": {
+            "name": "dos_plasticos",
+            "ok": 1,
+            "rois": ["plastico", "plastico2"]
+        }
+    },
+    "rois": {
+        "plastico": {
+            "name": "plastico",
+            "ok": 2,
+            "view_name": "cenital",
+            "results": [
+                ["KO", 1],
+                ["OK", 2]
+            ],
+            "confidence_classification": "None",
+            "confidence_detection": 0.9136490226,
+            "toclassify": false,
+            "detection": {
+                "name": "plastico",
+                "confidence": 0.9136490226,
+                "view": "cenital"
+            },
+            "margin": 0,
+            "defect_type": "unknown",
+            "ignore": false,
+            "threshold": 0.5,
+            "bias": 2
+        },
+        "plastico2": {
+            "name": "plastico",
+            "ok": 1,
+            "view_name": "cenital2",
+            "results": [
+                ["KO", 1],
+                ["OK", 2]
+            ],
+            "confidence_classification": "None",
+            "confidence_detection": "None",
+            "toclassify": false,
+            "detection": "None",
+            "margin": 0,
+            "defect_type": "unknown",
+            "ignore": false,
+            "threshold": 0.5,
+            "bias": 2
+        }
+    },
+    "anomalies": {
+        "plastico_1": {
+            "name": "plastico",
+            "ok": 1,
+            "view_name": "cenital",
+            "results": [
+                ["KO", 1],
+                ["OK", 2]
+            ],
+            "confidence_classification": "None",
+            "confidence_detection": 0.9136490226,
+            "toclassify": false,
+            "detection": {
+                "name": "plastico",
+                "confidence": 0.9136490226,
+                "view": "cenital"
+            },
+            "margin": 0,
+            "defect_type": "unknown",
+            "ignore": false,
+            "threshold": 0.5,
+            "bias": 1
+        }
+    }
+}
+,{
+    "id": "505902",
+    "model": "contenedor",
+    "timestamp": "2023-02-15_12-04-44",
+    "ok": 1,
+    "id_manufacturer": "None",
+    "results": [
+        ["KO", 1],
+        ["OK", 2]
+    ],
+    "bias": 2,
+    "sequence": [],
+    "views": {
+        "cenital": {
+            "name": "cenital",
+            "rois": ["plastico"],
+            "anomalies": [],
+            "url": "http://localhost:9999/elements/image/63ecbc4f91e4da0a06e2e8fd"
+        },
+        "cenital2": {
+            "name": "cenital2",
+            "rois": ["plastico2"],
+            "anomalies": [],
+            "url": "http://localhost:9999/elements/image/63ecbc4f91e4da0a06e2e8ff"
+        }, 
+        "cenital3": {
+            "name": "cenital3",
+            "rois": [],
+            "anomalies": [],
+            "url": "http://localhost:9999/elements/image/63ecbc4f91e4da0a06e2e901"
+        },
+        "cenital4": {
+            "name": "cenital4",
+            "rois": [],
+            "anomalies": [],
+            "url": "http://localhost:9999/elements/image/63ecbc4f91e4da0a06e2e903"
+        }
+    },
+    "parts": {
+        "uno_plasticos": {
+            "name": "uno_plasticos",
+            "ok": 2,
+            "rois": [
+                "plastico"
+            ]
+        },
+        "dos_plasticos": {
+            "name": "dos_plasticos",
+            "ok": 1,
+            "rois": ["plastico", "plastico2"]
+        }
+    },
+    "rois": {
+        "plastico": {
+            "name": "plastico",
+            "ok": 2,
+            "view_name": "cenital",
+            "results": [
+                ["KO", 1],
+                ["OK", 2]
+            ],
+            "confidence_classification": "None",
+            "confidence_detection": 0.9136490226,
+            "toclassify": false,
+            "detection": {
+                "name": "plastico",
+                "confidence": 0.9136490226,
+                "view": "cenital"
+            },
+            "margin": 0,
+            "defect_type": "unknown",
+            "ignore": false,
+            "threshold": 0.5,
+            "bias": 2
+        },
+        "plastico2": {
+            "name": "plastico",
+            "ok": 1,
+            "view_name": "cenital2",
+            "results": [
+                ["KO", 1],
+                ["OK", 2]
+            ],
+            "confidence_classification": "None",
+            "confidence_detection": "None",
+            "toclassify": false,
+            "detection": "None",
+            "margin": 0,
+            "defect_type": "unknown",
+            "ignore": false,
+            "threshold": 0.5,
+            "bias": 2
+        }
+    },
+    "anomalies": {
+        "plastico_1": {
+            "name": "plastico",
+            "ok": 1,
+            "view_name": "cenital",
+            "results": [
+                ["KO", 1],
+                ["OK", 2]
+            ],
+            "confidence_classification": "None",
+            "confidence_detection": 0.9136490226,
+            "toclassify": false,
+            "detection": {
+                "name": "plastico",
+                "confidence": 0.9136490226,
+                "view": "cenital"
+            },
+            "margin": 0,
+            "defect_type": "unknown",
+            "ignore": false,
+            "threshold": 0.5,
+            "bias": 1
+        }
+    }
+}
+,{
+    "id": "505903",
+    "model": "contenedor",
+    "timestamp": "2023-02-15_12-04-44",
+    "ok": 1,
+    "id_manufacturer": "None",
+    "results": [
+        ["KO", 1],
+        ["OK", 2]
+    ],
+    "bias": 2,
+    "sequence": [],
+    "views": {
+        "cenital": {
+            "name": "cenital",
+            "rois": ["plastico"],
+            "anomalies": [],
+            "url": "http://localhost:9999/elements/image/63ecbc4f91e4da0a06e2e8fd"
+        },
+        "cenital2": {
+            "name": "cenital2",
+            "rois": ["plastico2"],
+            "anomalies": [],
+            "url": "http://localhost:9999/elements/image/63ecbc4f91e4da0a06e2e8ff"
+        }, 
+        "cenital3": {
+            "name": "cenital3",
+            "rois": [],
+            "anomalies": [],
+            "url": "http://localhost:9999/elements/image/63ecbc4f91e4da0a06e2e901"
+        },
+        "cenital4": {
+            "name": "cenital4",
+            "rois": [],
+            "anomalies": [],
+            "url": "http://localhost:9999/elements/image/63ecbc4f91e4da0a06e2e903"
+        }
+    },
+    "parts": {
+        "uno_plasticos": {
+            "name": "uno_plasticos",
+            "ok": 2,
+            "rois": [
+                "plastico"
+            ]
+        },
+        "dos_plasticos": {
+            "name": "dos_plasticos",
+            "ok": 1,
+            "rois": ["plastico", "plastico2"]
+        }
+    },
+    "rois": {
+        "plastico": {
+            "name": "plastico",
+            "ok": 2,
+            "view_name": "cenital",
+            "results": [
+                ["KO", 1],
+                ["OK", 2]
+            ],
+            "confidence_classification": "None",
+            "confidence_detection": 0.9136490226,
+            "toclassify": false,
+            "detection": {
+                "name": "plastico",
+                "confidence": 0.9136490226,
+                "view": "cenital"
+            },
+            "margin": 0,
+            "defect_type": "unknown",
+            "ignore": false,
+            "threshold": 0.5,
+            "bias": 2
+        },
+        "plastico2": {
+            "name": "plastico",
+            "ok": 1,
+            "view_name": "cenital2",
+            "results": [
+                ["KO", 1],
+                ["OK", 2]
+            ],
+            "confidence_classification": "None",
+            "confidence_detection": "None",
+            "toclassify": false,
+            "detection": "None",
+            "margin": 0,
+            "defect_type": "unknown",
+            "ignore": false,
+            "threshold": 0.5,
+            "bias": 2
+        }
+    },
+    "anomalies": {
+        "plastico_1": {
+            "name": "plastico",
+            "ok": 1,
+            "view_name": "cenital",
+            "results": [
+                ["KO", 1],
+                ["OK", 2]
+            ],
+            "confidence_classification": "None",
+            "confidence_detection": 0.9136490226,
+            "toclassify": false,
+            "detection": {
+                "name": "plastico",
+                "confidence": 0.9136490226,
+                "view": "cenital"
+            },
+            "margin": 0,
+            "defect_type": "unknown",
+            "ignore": false,
+            "threshold": 0.5,
+            "bias": 1
+        }
+    }
+}
+]
