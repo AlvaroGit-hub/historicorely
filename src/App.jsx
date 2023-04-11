@@ -1,11 +1,21 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import Item from "./Item";
-import data from "./elements.json";
+//import data from "./elements.json";
 import Selected from "./Selected";
 import { dateTimeToString } from "./helpers";
 
 export default function App() {
+  
+  const [data, setData] = useState([{}]);
+  React.useEffect(function () {
+    //http://192.168.0.52:9998/elements/filter/?sort_field=timestamp&sort=-1&limit=20&skip=0
+    //http://192.168.0.52:9998/elements/filter/?sort_field=timestamp&sort=-1&limit=1&skip=0
+    fetch(`http://192.168.0.52:9998/elements/filter/?sort_field=timestamp&sort=-1&limit=20&skip=0`)
+      .then((res) => res.json())
+      .then((dataf) => setData(dataf));
+  },[]);
+
   //Estado de los check de  items
   const [selectedItem, setSelectedItem] = useState(
     new Array(Item.length).fill(false)
@@ -16,6 +26,10 @@ export default function App() {
   
   //Estado del contador
   const [counterCheck, setCounterCheck] = useState(0);
+
+  
+
+ 
 
   /**
    * Funcion que controla la seleccion de todos los items
@@ -77,13 +91,13 @@ export default function App() {
       </div>
       {data.map((item, index) => (
         <Item
-          key={item.id}
-          id={item.id}
+          key={item.id_element}
+          id={item.id_element}
           index={index}
           model={item.model}
           ok={item.ok}
           date={dateTimeToString(item.timestamp)}
-          img={item.img}
+          img={"./images/city-street-1.jpg"}
           checked={selectedItem[index]}
           onChange={() => handleOnChange(index)}
         />

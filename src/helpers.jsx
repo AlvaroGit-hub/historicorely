@@ -1,52 +1,22 @@
 
- export function dateTimeToString(date){
+export function dateTimeToString(date){
+  const months=["Ene","Feb","Mar","Abr","May","Jun", "Jul","Ago", "Sep","Oct","Nov","Dic"]
+  // Fecha y hora en formato ISO-8601
+  let fecha_y_hora = date;
+  // Crear un objeto Date con la fecha y hora
+  let newFecha = new Date(fecha_y_hora);
+  // Obtener la fecha en formato día, mes y año
+  let fecha_string = newFecha.toLocaleDateString();
+  // Separamos la fecha un un array
+  const fechaArray= fecha_string.split("/")
+  let day=fechaArray[0]
+  let month= months[fechaArray[1]-1]
+  let year= fechaArray[2]
+   // Obtener la hora en formato de 24 horas
+  let hora_string = newFecha.toLocaleTimeString('es-ES', {hour12: false});
+   // Combinar la fecha y hora en una sola cadena
+  let fecha_y_hora_string = `${day} ${month} ${year} ${hora_string}`
 
-const fecha = date.split("_")
-
-  const fecha1= fecha[0].split("-")
-  const fecha2= fecha[1].split("-")
-
-  
-
-  switch(fecha1[1]){
-    case '01':
-        fecha1[1]='Ene'
-      break
-    case '02':
-        fecha1[1]='Feb'
-      break
-    case '03':
-        fecha1[1]='Mar'
-      break
-    case '04':
-        fecha1[1]='Abr'
-      break
-    case '05':
-        fecha1[1]='May'
-      break
-    case '06':
-        fecha1[1]='Jun'
-      break
-      case '07':
-        fecha1[1]='Jul'
-      break
-    case '08':
-        fecha1[1]='Ago'
-      break
-    case '09':
-        fecha1[1]='Sep'
-      break
-    case '10':
-        fecha1[1]='Oct'
-      break
-    case '11':
-        fecha1[1]='Nov'
-      break
-    case '12':
-        fecha1[1]='Dec'
-      break
-  }
-
-  return "15 Jul 2022 - 18:36"
+  return fecha_y_hora_string
 }
 
