@@ -1,88 +1,94 @@
-import React, { useEffect } from 'react'
-import { useState } from 'react'
-import Item from './Item'
-import data from './elements.json'
-import Selected from './Selected'
-import { dateTimeToString } from './helpers'
+import React, { useEffect } from "react";
+import { useState } from "react";
+import Item from "./Item";
+import data from "./elements.json";
+import Selected from "./Selected";
+import { dateTimeToString } from "./helpers";
 
+export default function App() {
+  //Estado de los check de  items
+  const [selectedItem, setSelectedItem] = useState(
+    new Array(Item.length).fill(false)
+  );
 
-export default function App(){
-
-  const [selectedItems,setSelectedItems] = useState(data.map((item) => ({isChecked: false , id: item.id})))
-  const [selectId,setSelectID]= useState(false)
-  const [count,setCount] = useState(0)
-  //console.log(selectedItems)
-
-  const handleCambioTodos = () => {
-
-    setSelectID((prev) => !prev)
-
-    selectId.isChecked == true ? selectedItems.isChecked = selectId : selectedItems.isChecked = !selectId
-
-    
-  }
-  const handleCambio = (index) => {
-    
-    //setSelectedItems(selectedItems.splice(index,1,{isChecked: !selectedItems[index].isChecked , ...selectedItems[index]}))
-    setSelectedItems(selectedItems.filter(() => {!selectedItems[index].isChecked}))
-
-    
-  }
+  //Estado del check principal
+  const [selectAll, setSelectAll] = useState(false);
   
-  function totalChecks() {
-    var contador = 0;
-    selectedItems.map((item, i) => {
-      if (item.isChecked) {
-        contador++;
-      }
-    });
-    return {
-      contador
-    };
+  //Estado del contador
+  const [counterCheck, setCounterCheck] = useState(0);
+
+  /**
+   * Funcion que controla la seleccion de todos los items
+   */
+  const handleCheckAll = () => {
+    setSelectAll(!selectAll); 
+    const updatedCheckedState = data.map((item) => (item.checked = !selectAll));
+    setSelectedItem(updatedCheckedState);
+    countCheck(updatedCheckedState); //Llamamos a la funcion contador
+  };
+
+  /**
+   * Funcion que controla la seleccion cada item
+   * @param {*} position 
+   */
+  const handleOnChange = (position) => {
+    const updatedCheckedState = selectedItem.map((item, index) =>
+      index === position ? !item : item
+    );
+    setSelectedItem(updatedCheckedState);
+    countCheck(updatedCheckedState); //Llamamos a la funcion contador
+  };
+
+  /**
+   * Funcion que se encarga de contar los check en true
+   * @param {*} updatedCheckedState 
+   */
+  function countCheck(updatedCheckedState) {
+    const totalCount = updatedCheckedState.reduce(
+      (sum, currentState, index) => {
+        if (currentState === true) {
+          return sum + 1;
+        }
+        return sum;
+      },
+      0
+    );
+
+    setCounterCheck(totalCount);
+    //Si no hay items seleccionados cambiamos a false el check principal
+    if (totalCount === 0) {
+      setSelectAll(false);
+    }
   }
 
-  useEffect(() => {
-    setCount(totalChecks().contador);
-    
-  }, [selectedItems]);
-
- 
-  
   return (
-    <div className='bg-gray-400 text-center w-full p-2 h-full'>
-      <header className='p-20'>
+    <div className="bg-gray-400 text-center w-full p-2 h-full">
+      <header className="p-20">
         <h1>Histórico</h1>
       </header>
-      <div className='flex sitems-center pr-2 text-xs py-0 px-2.5 my-0.5 mx-2.5'>
-          <input onChange={handleCambioTodos} type="checkbox" checked={selectId}/>
-          <h2 className='pl-4 pr-1'>ID</h2>
-          <h2 className='pl-12'>NOMBRE</h2>
-          <h2 className='pl-24'>ESTADO</h2>
-          <h2 className='pl-8 pr-3'>FECHA</h2>
-          <h2 className='pl-16 pr-3'>MUESTRAS</h2>
-          <h2 className='pl-16'>DETECCIONES</h2>
+      <div className="flex sitems-center pr-2 text-xs py-0 px-2.5 my-0.5 mx-2.5">
+        <input onChange={handleCheckAll} type="checkbox" checked={selectAll} />
+        <h2 className="pl-4 pr-1">ID</h2>
+        <h2 className="pl-12">NOMBRE</h2>
+        <h2 className="pl-24">ESTADO</h2>
+        <h2 className="pl-8 pr-3">FECHA</h2>
+        <h2 className="pl-16 pr-3">MUESTRAS</h2>
+        <h2 className="pl-16">DETECCIONES</h2>
       </div>
-      {selectedItems && data.map((item, index) =>
+      {data.map((item, index) => (
         <Item
           key={item.id}
           id={item.id}
           index={index}
           model={item.model}
           ok={item.ok}
-          date= {dateTimeToString(item.timestamp)}
+          date={dateTimeToString(item.timestamp)}
           img={item.img}
-          checked={selectedItems.isChecked}
-          onChange={() => handleCambio(index)}
-          
+          checked={selectedItem[index]}
+          onChange={() => handleOnChange(index)}
         />
-      )
-      }
-
-      
-        <Selected  
-        num ={count} />
-
+      ))}
+      <Selected num={counterCheck} />
     </div>
-  )
+  );
 }
-
