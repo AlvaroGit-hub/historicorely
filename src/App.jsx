@@ -22,11 +22,9 @@ export default function App() {
   // }).map((i)=> i.url)
 
 
-  const arrayImg = data.map((v)=>[v.views])
+  //const arrayImg = data.map((v)=>[v.views])
   //const arrayImg2= arrayImg[0].map((i)=> i.url)
-  
-                  
-
+                    
   //console.log(arrayImg)
 
   //Estado de los check de  items
@@ -104,7 +102,7 @@ export default function App() {
       </div>
       {data.map((item, index) => (
         <Item
-          key={item.id_element}
+          key={`${item.id_element}${item.index}`}
           id={item.id_element}
           index={index}
           model={item.model}
