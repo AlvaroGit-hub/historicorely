@@ -7,7 +7,7 @@ export function dateTimeToString(date){
   let newFecha = new Date(fecha_y_hora);
   // Obtener la fecha en formato día, mes y año
   let fecha_string = newFecha.toLocaleDateString();
-  // Separamos la fecha un un array
+  // Separamos la fecha en un array
   const fechaArray= fecha_string.split("/")
   let day=fechaArray[0]
   let month= months[fechaArray[1]-1]

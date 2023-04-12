@@ -16,6 +16,19 @@ export default function App() {
       .then((dataf) => setData(dataf));
   },[]);
 
+  // const arrayViews = data.map(function(todo) {
+  //   //todo.views.map((i)=> i.url)
+  //   return todo.views
+  // }).map((i)=> i.url)
+
+
+  const arrayImg = data.map((v)=>[v.views])
+  //const arrayImg2= arrayImg[0].map((i)=> i.url)
+  
+                  
+
+  //console.log(arrayImg)
+
   //Estado de los check de  items
   const [selectedItem, setSelectedItem] = useState(
     new Array(Item.length).fill(false)
@@ -97,10 +110,11 @@ export default function App() {
           model={item.model}
           ok={item.ok}
           date={dateTimeToString(item.timestamp)}
-          img={"./images/city-street-1.jpg"}
+          img={item.views}
           checked={selectedItem[index]}
           onChange={() => handleOnChange(index)}
         />
+        
       ))}
       <Selected num={counterCheck} />
     </div>
