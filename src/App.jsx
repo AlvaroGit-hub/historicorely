@@ -7,7 +7,7 @@ import { dateTimeToString } from "./helpers";
 
 export default function App() {
   
-  const [data, setData] = useState([{}]);
+  const [data, setData] = useState([]);
   React.useEffect(function () {
     //http://192.168.0.52:9998/elements/filter/?sort_field=timestamp&sort=-1&limit=20&skip=0
     //http://192.168.0.52:9998/elements/filter/?sort_field=timestamp&sort=-1&limit=1&skip=0
@@ -16,17 +16,7 @@ export default function App() {
       .then((dataf) => setData(dataf));
   },[]);
 
-  // const arrayViews = data.map(function(todo) {
-  //   //todo.views.map((i)=> i.url)
-  //   return todo.views
-  // }).map((i)=> i.url)
-
-
-  //const arrayImg = data.map((v)=>[v.views])
-  //const arrayImg2= arrayImg[0].map((i)=> i.url)
-                    
-  //console.log(arrayImg)
-
+ 
   //Estado de los check de  items
   const [selectedItem, setSelectedItem] = useState(
     new Array(Item.length).fill(false)
@@ -37,10 +27,6 @@ export default function App() {
   
   //Estado del contador
   const [counterCheck, setCounterCheck] = useState(0);
-
-  
-
- 
 
   /**
    * Funcion que controla la seleccion de todos los items
@@ -87,18 +73,19 @@ export default function App() {
   }
 
   return (
-    <div className="bg-gray-400 text-center w-full p-2 h-full">
+    <div className="bg-gray-400 text-center p-2  min-w-[650px]">
       <header className="p-20">
         <h1>Histórico</h1>
       </header>
-      <div className="flex sitems-center pr-2 text-xs py-0 px-2.5 my-0.5 mx-2.5">
+      {/* // <div className="flex text-xs px-2.5 my-0.5 mx-2.5"></div> */}
+      <div className="flex text-xs flex px-2.5 my-0.5 mx-2.5 min-w-[650px]">
         <input onChange={handleCheckAll} type="checkbox" checked={selectAll} />
-        <h2 className="pl-4 pr-1">ID</h2>
-        <h2 className="pl-12">NOMBRE</h2>
-        <h2 className="pl-24">ESTADO</h2>
-        <h2 className="pl-8 pr-3">FECHA</h2>
-        <h2 className="pl-16 pr-3">MUESTRAS</h2>
-        <h2 className="pl-16">DETECCIONES</h2>
+        <h2 className="pl-1 pr-1 ml-0">ID</h2>
+        <h2 className="pl-5 ml-[00px]">NOMBRE</h2>
+        <h2 className="pl-20">ESTADO</h2>
+        <h2 className="pl-20 pr-3">FECHA</h2>
+        <h2 className="pl-[30%] pr-3">MUESTRAS</h2>
+        {/* <h2 className="pl-16">DETECCIONES</h2> */}
       </div>
       {data.map((item, index) => (
         <Item

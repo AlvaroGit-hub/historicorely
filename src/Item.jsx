@@ -21,7 +21,7 @@ const Item = ({id, model, ok, date, img, onChange, index, checked }) => {
   return (
     
     <div>
-      <div className="bg-white border-black rounded-md flex py-0 px-2.5 my-0.5 mx-2.5 justify-between">
+      <div className="bg-white border-black rounded-md flex py-0 px-2.5 my-0.5 mx-2.5 justify-between min-w-[650px]">
         <div className="flex items-center pr-2 text-xs">
           <label className="mb-2 cursor-pointer" htmlFor={id} key={index}>
             <input
@@ -31,25 +31,25 @@ const Item = ({id, model, ok, date, img, onChange, index, checked }) => {
             />
           </label>
           {/* <h2 className="pl-4">{id}</h2> */}
-          <h2 className="pl-6">{model}</h2>
+          <h2 className="pl-8">{model}</h2>
           <h2 className="pl-24">{ok}</h2>
-          <h2 className="pl-12 float-right">{date}</h2>
+          <h2 className="pl-16 ">{date}</h2>
         </div>
         {urlImgArray.length>0 && 
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap ">
           {
-            urlImgArray.map((item)=>(
-              <Image image={item} key={item}/>
+            urlImgArray.map((urlImg)=>(
+              <Image image={urlImg} key={urlImg}/>
             ))
           }
           
         </div>}
 
-        <div className="flex flex-wrap ">
+        {/* <div className="flex flex-wrap ">
           <Image image={img} />
           <Image image={img} />
           
-        </div>
+        </div> */}
         <button>...</button>
       </div>
       {/* {checks ? <Selected/> : ""} */}
